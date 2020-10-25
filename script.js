@@ -4,8 +4,11 @@ var generateBtn = document.querySelector("#generate");
 //});
 // Write password to the #password input
 
-generateBtn.addEventListener("click", function () {
+const characterAmount = numberOfCharacters.value 
+
+var numberOfCharacters = generateBtn.addEventListener("click", function () {
   prompt("How many characters would you like your password to be?");
+  console.log(numberOfCharacters);
 });
 
 
@@ -29,7 +32,9 @@ function generatePassword() {
   var symbols = ["!", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", ",", "'", "[", "]", "{", "}", "|", "?", ":", ";"]
 }
 
-var options;
-var upperCaseInput;
-var lowerCaseInput;
+var options = [includeUppercase, includeLowercase, includeNumbers, includeSymbols];
+var includeUppercase = alert("Would you like to include uppercase letters in your password?");
+var includeLowercase = alert("Would you like to include lowercase letters in your password?");
+var includeNumbers = alert("Would you like to include numbers in your password?");
+var includeSymbols = alert("Would you like to include symbols in your password?");
 
