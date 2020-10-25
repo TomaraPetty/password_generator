@@ -4,7 +4,10 @@ var generateBtn = document.querySelector("#generate");
 //});
 // Write password to the #password input
 
-prompt("How many characters would you like your password to be?");
+generateBtn.addEventListener("click", function () {
+  prompt("How many characters would you like your password to be?");
+});
+
 
 
 
