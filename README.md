@@ -2,10 +2,10 @@
 
 Link to site: https://tomararuth.github.io/password_generator/
 
-# This website will generate a random and secure passoword to the user.
-The user will be prompted to go through several different prompts asking if they would like certain letter, character or numerical elements inside of their password. Based on the user's selection a completely randomized password will be delivered to the user. 
+# Overview of website functions:
+This website will generate a random and secure passoword to the user.The user will be prompted to go through several different prompts asking if they would like certain letter, character or numerical elements inside of their password. Based on the user's selection a completely randomized password will be delivered to the user. 
 
-# Tech
+# Tech:
 This website contains three folders of code including HTML, CSS and Javascript. 
 * HTML is made up of a header followed by a div block that contains an h2, a text box and a generate button all contained inside of a wrapper. 
 * CSS the page is dynamically formated by percentages with three different size breaks for the button and text inside the div text box.  
