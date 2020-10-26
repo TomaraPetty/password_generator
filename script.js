@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+//var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
@@ -11,6 +11,46 @@ var generateBtn = document.querySelector("#generate");
 var characterAmount = numberOfCharacters.value 
 */
 
+/*
+//Added confirm pop ups to ask user what kind of characters they would like to include. 
+var options = [includeUppercase, includeLowercase, includeNumbers, ];
+var includeUppercase = confirm("Would you like to include uppercase letters in your password?");
+var includeLowercase = confirm("Would you like to include lowercase letters in your password?");
+var includeNumbers = confirm("Would you like to include numbers in your password?");
+var includeSymbols = confirm("Would you like to include symbols in your password?");
+*/
+
+// Assign confirms to variables. 
+var upperEl = confirm("Would you like to include uppercase letters in your password?");
+var lowerEl = confirm("Would you like to include lowercase letters in your password?");
+var numberEl = confirm("Would you like to include numbers in your password?");
+var symbolEl = confirm("Would you like to include symbols in your password?");
+var generateEl = document.getElementById("generate");
+
+// create function/object and add properties. 
+var randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
+
+// Adding event listener to generate button. Time: 18.00
+generateEl.addEventListener("click", function () {
+  var hasLower = lowerEl;
+  var hasUpper = upperEl;
+  var hasNumber = numberEl;
+  var hasSymbol = symbolEl;
+  
+  console.log(hasLower, hasUpper, hasNumber, hasSymbol);
+});
+
+//Generate password function
+function generatePassword(lower, upper, number, symbol) {
+  
+}
+
+// functions to generate random numbers, letters and symbols. 
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -43,23 +83,6 @@ function writePassword() {
 generateBtn.addEventListener("click", function() {
   generatePassword();
 });
-*/
-
-
-/*function generatePassword() {
-  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var numbers = [0,1,2,3,4,5,6,7,8,9,0];
-  var symbols = ["!", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", ",", "'", "[", "]", "{", "}", "|", "?", ":", ";"]
-}*/
-
-/*
-//Added confirm pop ups to ask user what kind of characters they would like to include. 
-var options = [includeUppercase, includeLowercase, includeNumbers, ];
-var includeUppercase = confirm("Would you like to include uppercase letters in your password?");
-var includeLowercase = confirm("Would you like to include lowercase letters in your password?");
-var includeNumbers = confirm("Would you like to include numbers in your password?");
-var includeSymbols = confirm("Would you like to include symbols in your password?");
 */
 
 
