@@ -2,58 +2,63 @@
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button. 
-generateBtn.addEventListener("click", function() {
-var lengthEl = parseInt(prompt("How many characters would you like your password to be? Please choose between 8-128."));
-//if (lengthEl < 8 || i > 128) {
-  //alert("Invalid entry.");
-  //var lengthEl = parseInt(prompt("Please choose a number between 8-128."));
-//}
+generateBtn.addEventListener("click",
+  displayPassword
 
-// Get input from user. 
-var upperEl = confirm("Would you like to include uppercase letters in your password?");
-var lowerEl = confirm("Would you like to include lowercase letters in your password?");
-var numberEl = confirm("Would you like to include numbers in your password?");
-var symbolEl = confirm("Would you like to include symbols in your password?");
+);
 
-// Set confirm options selected to variables. 
-var length = lengthEl;
-var hasLower = lowerEl;
-var hasUpper = upperEl;
-var hasNumber = numberEl;
-var hasSymbol = symbolEl;
-  
+function displayPassword () {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+//Generate password function
+function generatePassword() {
+  var lengthEl = parseInt(prompt("How many characters would you like your password to be? Please choose between 8-128."));
+  if (lengthEl < 8 || lengthEl > 128) {
+    alert("Invalid entry. Password must be between 8-128.");
+    return;
+  }
+
+  // Get input from user. 
+  var upperEl = confirm("Would you like to include uppercase letters in your password?");
+  var lowerEl = confirm("Would you like to include lowercase letters in your password?");
+  var numberEl = confirm("Would you like to include numbers in your password?");
+  var symbolEl = confirm("Would you like to include symbols in your password?");
+
+  // Set confirm options selected to variables. 
+  var length = lengthEl;
+  var hasLower = lowerEl;
+  var hasUpper = upperEl;
+  var hasNumber = numberEl;
+  var hasSymbol = symbolEl;
+
   console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
 
-    // add the intigers the user chooses into an array. 
-  var charTypes = []; 
-  if (hasLower === true) {
-    charTypes.push(lowerEl);
+  // add the intigers the user chooses into an array. 
+  var charTypes = [];
+  var result = [];
+  while (charTypes.length < lengthEl) {
+    if (hasLower === true) {
+      charTypes.push(getRandomLower());
+    }
+    if (hasUpper === true) {
+      charTypes.push(getRandomUpper());
+    }
+    if (hasNumber === true) {
+      charTypes.push(getRandomNumber());
+    }
+    if (hasSymbol === true) {
+      charTypes.push(getRandomSymbol());
+    }
   }
-  if (hasUpper === true) {
-    charTypes.push(upperEl);
-  }
-  if (hasNumber === true) {
-    charTypes.push(numberEl);
-  }
-  if (hasSymbol === true) {
-    charTypes.push(symbolEl);
-  }
+  
   for (let i = 0; i < lengthEl; i++) {
-    generatePassword();
-
+    result[i] = charTypes[i];
   };
-
-  //Generate password function
-  function generatePassword(lower, upper, number, symbol) {
-  } 
-  var writePassword = function () {
-    var password = generatePassword.value;
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-  }
-  writePassword();
-
-});
+  return result.join("");
+}
 
 // create function and add get random values to make it an object. 
 var randomFunc = {
@@ -83,10 +88,3 @@ console.log(getRandomUpper());
 console.log(getRandomNumber());
 console.log(getRandomSymbol());
 
-/*
-var textBox = document.querySelector("#generatedPassword");
-  // Trying to get the generated random characters to appear in the text box. Does not work.
-  textBox.innerText = generatePassword(
-    lowerEl, upperEl, numberEl, symbolEl,lengthEl
-    ); 
-    */
