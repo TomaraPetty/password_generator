@@ -1,33 +1,28 @@
 // Assignment Code
-//var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Add event listener to generate button. 
+generateBtn.addEventListener("click", function() {
+var lengthEl = parseInt(prompt("How many characters would you like your password to be? Please choose between 8-128."));
 
-/*var numberOfCharacters = generateBtn.addEventListener("click", function () {
-  prompt("How many characters would you like your password to be?");
-  console.log(numberOfCharacters);
-});
-
-var characterAmount = numberOfCharacters.value 
-*/
-
-/*
-//Added confirm pop ups to ask user what kind of characters they would like to include. 
-var options = [includeUppercase, includeLowercase, includeNumbers, ];
-var includeUppercase = confirm("Would you like to include uppercase letters in your password?");
-var includeLowercase = confirm("Would you like to include lowercase letters in your password?");
-var includeNumbers = confirm("Would you like to include numbers in your password?");
-var includeSymbols = confirm("Would you like to include symbols in your password?");
-*/
-
-// Assign confirms to variables. 
+// Get input from user. 
 var upperEl = confirm("Would you like to include uppercase letters in your password?");
 var lowerEl = confirm("Would you like to include lowercase letters in your password?");
 var numberEl = confirm("Would you like to include numbers in your password?");
 var symbolEl = confirm("Would you like to include symbols in your password?");
-var generateEl = document.getElementById("generate");
+var textBox = document.getElementById("generatedPassword");
 
-// create function/object and add properties. 
+var length = lengthEl;
+var hasLower = lowerEl;
+var hasUpper = upperEl;
+var hasNumber = numberEl;
+var hasSymbol = symbolEl;
+  
+  console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
+
+});
+
+// create function and add get random values to make it an object. 
 var randomFunc = {
   lower: getRandomLower,
   upper: getRandomUpper,
@@ -35,19 +30,52 @@ var randomFunc = {
   symbol: getRandomSymbol
 };
 
-// Adding event listener to generate button. Time: 18.00
-generateEl.addEventListener("click", function () {
-  var hasLower = lowerEl;
-  var hasUpper = upperEl;
-  var hasNumber = numberEl;
-  var hasSymbol = symbolEl;
+// funtion object with all of the different elements inside. 
+function generatePassword () {
   
-  console.log(hasLower, hasUpper, hasNumber, hasSymbol);
+  lower;
+  upper;
+  number;
+  symbol;
+}
+
+// Adding event listener to generate button. 
+generateBtn.addEventListener("click", function () {
+  
+
+  var textBox = document.querySelector("#password");
+  // Trying to get the generated random characters to appear in the text box. Does not work.
+  textBox.innerText = generatePassword(
+    hasLower, 
+    hasUpper, 
+    hasNumber, 
+    hasSymbol, 
+    length
+    ); 
+
+  // add the intigers the user chooses into an array. 
+  var charTypes = [] 
+
+  if (hasLower === true) {
+    charTypes.push(lower);
+  }
+  if (hasUpper === true) {
+    charTypes.push(upper);
+  }
+  if (hasNumber === true) {
+    charTypes.push(number);
+  }
+  if (hasSymbol === true) {
+    charTypes.push(symbol);
+  }
+
+  for (let i = 0; i < lenghtEl; i++) {
+    generatePassword();
+  }
 });
 
 //Generate password function
 function generatePassword(lower, upper, number, symbol) {
-  
 }
 
 // functions to generate random numbers, letters and symbols. 
@@ -66,7 +94,7 @@ function getRandomNumber() {
 function getRandomSymbol() {
   return String.fromCharCode(Math.floor(Math.random() * 15) + 33);
 }
-
+// check to make sure random functions are working. 
 console.log(getRandomLower());
 console.log(getRandomUpper());
 console.log(getRandomNumber());
@@ -77,22 +105,4 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
-/*
-// Add event listener to generate button
-generateBtn.addEventListener("click", function() {
-  generatePassword();
-});
-*/
-
-
-/*const passwordCharacters = []
-for (let i = 0; i < characterAmount, i++) {
-  const character = charCodes[Math.floor(Math.random() * 
-    charCodes.length)]
-  passwordCharacters.push(String.fromCharCode(charCodes))
-
-}
-*/
-
 
