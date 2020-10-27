@@ -47,7 +47,7 @@ var hasSymbol = symbolEl;
   function generatePassword(lower, upper, number, symbol) {
   } 
   var writePassword = function () {
-    var password = generatePassword;
+    var password = generatePassword.value;
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
   }
