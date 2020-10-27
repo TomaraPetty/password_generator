@@ -39,10 +39,8 @@ function generatePassword () {
   symbol;
 }
 
-// Adding event listener to generate button. 
-generateBtn.addEventListener("click", function () {
-  
-
+"
+"
   var textBox = document.querySelector("#password");
   // Trying to get the generated random characters to appear in the text box. Does not work.
   textBox.innerText = generatePassword(
