@@ -12,6 +12,6 @@ This website contains three folders of code including HTML, CSS and Javascript.
 * Javascript 
 -The different character types are stored in different arrays pulled from character codes. Each array of characters is randomized by utilizing Math random and Math floor to round it down to an even number. 
 -An event listener was added to the generate button so that it sends the user a series of prompts and confirst to determin what types of characters they would like to include in their password. 
--If else statement is used to determine which items to add into an array of character types the user has selected. 
+-If else statement is used to determine which items to push into an array of character types the user has selected.  
 -A for loop runs the function to grab a random characters. It will run the number of times that the user entered as the amount of characters they would like to use.    
--After the generator runs through all of the propts it delivers the secure password inide of the div text box.
+-After the generator runs through all of the propts it delivers the secure password inide of the div text.

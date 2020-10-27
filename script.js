@@ -83,8 +83,8 @@ function getRandomSymbol() {
 }
 
 // check to make sure random functions are working. 
-console.log(getRandomLower());
-console.log(getRandomUpper());
-console.log(getRandomNumber());
-console.log(getRandomSymbol());
+// console.log(getRandomLower());
+// console.log(getRandomUpper());
+// console.log(getRandomNumber());
+// console.log(getRandomSymbol());
 
