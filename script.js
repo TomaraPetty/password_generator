@@ -4,6 +4,10 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button. 
 generateBtn.addEventListener("click", function() {
 var lengthEl = parseInt(prompt("How many characters would you like your password to be? Please choose between 8-128."));
+//if (lengthEl < 8 || i > 128) {
+  //alert("Invalid entry.");
+  //var lengthEl = parseInt(prompt("Please choose a number between 8-128."));
+//}
 
 // Get input from user. 
 var upperEl = confirm("Would you like to include uppercase letters in your password?");
@@ -20,19 +24,8 @@ var hasSymbol = symbolEl;
   
   console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
 
-  //Generate password function
-  function generatePassword(lower, upper, number, symbol) {
-  } 
-
-  var writePassword = function () {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-  }
-  writePassword();
-
     // add the intigers the user chooses into an array. 
-  var charTypes = [] 
+  var charTypes = []; 
   if (hasLower === true) {
     charTypes.push(lowerEl);
   }
@@ -49,6 +42,16 @@ var hasSymbol = symbolEl;
     generatePassword();
 
   };
+
+  //Generate password function
+  function generatePassword(lower, upper, number, symbol) {
+  } 
+  var writePassword = function () {
+    var password = generatePassword;
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  }
+  writePassword();
 
 });
 
