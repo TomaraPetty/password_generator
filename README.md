@@ -1,6 +1,6 @@
 # password_generator
 
-Link to site: https://tomararuth.github.io/password_generator/
+Link to site: https://tomarapetty.github.io/password_generator/
 
 # Overview of website functions:
 This website will generate a random and secure passoword to the user.The user will be prompted to go through several different prompts asking if they would like certain letter, character or numerical elements inside of their password. Based on the user's selection a completely randomized password will be delivered to the user. 
